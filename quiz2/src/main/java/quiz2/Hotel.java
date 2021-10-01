@@ -31,5 +31,58 @@ public class Hotel
 			}
 		}
 	}
-	
+	public int SearchGuest(int k)
+	{
+		int size = room.size();
+		
+		for(int i=0;i<size;i++)
+		{
+			if(room.get(i).key==k)
+			{
+				if(room.get(i).status==false)
+				{
+					System.out.println("No such guest");
+					return 0;
+				}
+				else
+				{
+					System.out.println("Customer name is:"+room.get(i).getClient().getName());
+					return k;			
+				}
+			}
+		}
+		System.out.println("No such Room");
+		return 0;
+	}
+	public boolean BookRoom(int k,int d, int m, int y, int s)
+	{
+		int size = room.size();
+		
+		for(int i=0;i<size;i++)
+		{
+			if(room.get(i).key==k)
+			{
+				return room.get(i).BookRoom(d, m, y, s);
+			}
+		}
+		return false;
+	}
+	public boolean ReserveRoom(int k,String n)
+	{
+		int size = room.size();
+		
+		for(int i=0;i<size;i++)
+		{
+			if(room.get(i).key==k)
+			{
+				if(room.get(i).status==false)
+				{
+					room.get(i).status=true;
+					room.get(i).getClient().setName(n);
+					return true;
+				}
+			}
+		}
+		return false;
+	}
 }

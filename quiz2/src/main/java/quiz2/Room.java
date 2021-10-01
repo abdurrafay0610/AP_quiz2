@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Room 
 {
 	int key;
-	Customer client;
+	private Customer client;
 	boolean status;
 	ArrayList<Booking> booked = new ArrayList<Booking>();
 	
@@ -19,6 +19,16 @@ public class Room
 		key=k;
 		status=false;
 	}
+	//getter setter
+	public Customer getClient() 
+	{
+		return client;
+	}
+	public void setClient(Customer client) 
+	{
+		this.client = client;
+	}
+	//ftns
 	public boolean BookRoom(int d,int m,int y,int s)
 	{
 		Booking obj = new Booking(d,m,y,s);
