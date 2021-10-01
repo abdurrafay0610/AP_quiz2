@@ -12,12 +12,13 @@ public class Room
 	//constructor
 	Room()
 	{
-		
+		client = new Customer();
 	}
 	Room(int k)
 	{
 		key=k;
 		status=false;
+		client = new Customer();
 	}
 	//getter setter
 	public Customer getClient() 

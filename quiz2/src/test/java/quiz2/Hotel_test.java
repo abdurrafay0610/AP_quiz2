@@ -26,18 +26,21 @@ public class Hotel_test {
 		Assert.assertEquals(3,hotel.room.size());
 	}
 	@Test
-	public void Reserver_Room_test() 
+	public void Reserve_Room_test() 
 	{
 		hotel.addRoom();
 		hotel.addRoom();
 		hotel.addRoom();
 		
-		boolean bool=hotel.ReserveRoom(1, "Abdurrafay");	//room will be reserved
-		System.out.println(bool);
-		Assert.assertEquals(true, bool);
-		System.out.println(bool);
+		boolean bol=hotel.ReserveRoom(1, "Abdurrafay");	//room will be reserved
+		System.out.println(bol);
+		Assert.assertEquals(true, bol);
+		System.out.println(bol);
 		
-		bool = hotel.ReserveRoom(1, "Syed");		//will not reserve already reserved room
-		Assert.assertEquals(false, bool);
+		bol = hotel.ReserveRoom(1, "Syed");		//will not reserve already reserved room
+		Assert.assertEquals(false, bol);
+		
+		bol = hotel.ReserveRoom(5, "Abdurrafay"); //reserving a non existant room
+		Assert.assertEquals(false, bol);
 	}
 }

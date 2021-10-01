@@ -77,8 +77,8 @@ public class Hotel
 			{
 				if(room.get(i).status==false)
 				{
-					room.get(i).status=true;
 					room.get(i).getClient().setName(n);
+					room.get(i).status=true;
 					return true;
 				}
 			}
