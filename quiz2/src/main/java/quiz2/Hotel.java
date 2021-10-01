@@ -19,15 +19,21 @@ public class Hotel
 		room.add(obj);
 		return true;
 	}
-	public void getAvailableRoom()
+	public void getAvailableRoom() throws RoomNotFound
 	{
 		int size=room.size();
-		
-		for(int i=0;i<size;i++)
+		if(size==0)
 		{
-			if(room.get(i).status==false)
+			throw new RoomNotFound("No Rooms Found!");
+		}
+		else
+		{	
+			for(int i=0;i<size;i++)
 			{
-				System.out.println("The Room "+i+1+" is available.");
+				if(room.get(i).status==false)
+				{
+					System.out.println("The Room "+i+1+" is available.");
+				}
 			}
 		}
 	}
